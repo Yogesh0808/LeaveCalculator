@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RKMVC Leave Calculator</title>
+    <!-- Add Bootstrap CSS link here -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Solway&display=swap" rel="stylesheet">
+</head>
+
+<body style="font-family: 'Patrick Hand', cursive;background: linear-gradient(82deg, #f6c4ed 0%, #e1dae6 100%);">
+    <div class="container mt-5">
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="#">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Emblem-Ramakrishna-Mission-Transparent.png/220px-Emblem-Ramakrishna-Mission-Transparent.png"
+                    width="70" height="80" class="d-inline-block align-top" alt="Logo">
+            </a>
+            <h1 class="navbar-heading text-sm-right" style="font-family: 'Solway', serif;">RKMVC Leave Calculator</h1>
+        </nav>
+        <img src="https://img.freepik.com/free-vector/calculator-concept-illustration_114360-1194.jpg?w=307"
+            style="mix-blend-mode: multiply;">
+        <form id="leaveCalculatorForm">
+            <div class="form-group">
+                <label for="hoursPresent">Hours/Days Present:</label>
+                <input type="number" class="form-control" id="hoursPresent" placeholder="Number of Hours/Days Present"
+                    min="0" style="background: rgba(255, 233, 233, 0.711)" required>
+            </div>
+            <div class="form-group">
+                <label>Unit:</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="unit" id="unitHours" value="hours" checked>
+                    <label class="form-check-label" for="unitHours">Hours</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="unit" id="unitDays" value="days">
+                    <label class="form-check-label" for="unitDays">Days</label>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary" id="calculateButton">Calculate</button>
+        </form>
+        <div class="mt-4">
+            <h2>Result:</h2>
+            <p id="resultMessage"></p>
+        </div>
+        <div class="mt-4">
+            <h2>Pie Chart:</h2>
+            <canvas id="pieChart" width="200"></canvas>
+        </div>
+        <p>OD feature will be added soon.</p>
+        <div id="calculatorPopoverContent" style="display: none;">
+            <div class="calculator">
+                <input type="text" id="calculatorDisplay" class="form-control" readonly>
+                <div class="buttons">
+                    <button class="btn btn-secondary" onclick="clearDisplay()">C</button>
+                    <button class="btn btn-secondary" onclick="appendToDisplay('7')">7</button>
+                    <button class="btn btn-secondary" onclick="appendToDisplay('8')">8</button>
+                    <button class="btn btn-secondary" onclick="appendToDisplay('9')">9</button>
+                    <button class="btn btn-secondary" onclick="appendToDisplay('+')">+</button>
+                    <button class="btn btn-secondary" onclick="appendToDisplay('4')">4</button>
+                    <button class="btn btn-secondary" onclick="appendToDisplay('5')">5</button>
+                    <button class="btn btn-secondary" onclick="appendToDisplay('6')">6</button>
+                    <button class="btn btn-secondary" onclick="appendToDisplay('-')">-</button>
+                    <button class="btn btn-secondary" onclick="appendToDisplay('1')">1</button>
+                    <button class="btn btn-secondary" onclick="appendToDisplay('2')">2</button>
+                    <button class="btn btn-secondary" onclick="appendToDisplay('3')">3</button>
+                    <button class="btn btn-secondary" onclick="appendToDisplay('*')">*</button>
+                    <button class="btn btn-secondary" onclick="appendToDisplay('0')">0</button>
+                    <button class="btn btn-secondary" onclick="calculateResult()">=</button>
+                    <button class="btn btn-secondary" onclick="appendToDisplay('/')">/</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Bootstrap JS and Chart.js links here -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Add your custom JavaScript file here -->
+    <script src="script.js"></script>
+</body>
+
+</html>
